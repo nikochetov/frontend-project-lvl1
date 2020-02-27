@@ -1,0 +1,24 @@
+{
+  "name": "brain_games",
+  "version": "1.0.0",
+  "description": "hexlet project 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikochetov/frontend-project-lvl1.git"
+  },
+  "keywords": [
+    "project",
+    "hexlet",
+    "games"
+  ],
+  "author": "Nikolay Kochetov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikochetov/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/nikochetov/frontend-project-lvl1#readme"
+}
