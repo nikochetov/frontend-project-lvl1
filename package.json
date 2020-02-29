@@ -1,5 +1,5 @@
 {
-  "name": "mr.brain_games",
+  "name": "brain_games",
   "version": "1.0.0",
   "description": "hexlet project 1",
   "main": "src/index.js",
