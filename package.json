@@ -2,10 +2,11 @@
   "name": "brain_games",
   "version": "1.0.0",
   "description": "hexlet project 1",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nikochetov/frontend-project-lvl1.git"
