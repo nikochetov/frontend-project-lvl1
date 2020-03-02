@@ -11,7 +11,7 @@ $ git clone https://github.com/nikochetov/frontend-project-lvl1.git
 $ make install
 ```
 
-## Start
+## Run
 ```sh
 $ make start
 ```
