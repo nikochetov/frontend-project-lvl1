@@ -2,14 +2,14 @@
   "name": "brain_games",
   "version": "1.0.0",
   "description": "hexlet project 1",
+  "type": "module",
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "brain-games": "bin/brain-games.js"
+    "brain-games": "src/bin/brain-games.js"
   },
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nikochetov/frontend-project-lvl1.git"
@@ -24,5 +24,9 @@
   "bugs": {
     "url": "https://github.com/nikochetov/frontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/nikochetov/frontend-project-lvl1#readme"
+  "homepage": "https://github.com/nikochetov/frontend-project-lvl1#readme",
+  "dependencies": {
+    "cjs-module": "^1.5.0",
+    "readline-sync": "^1.4.10"
+  }
 }
