@@ -6,7 +6,7 @@ const auth = () => {
   const name = readlineSync.question('May I have your name? ');
   console.log('Hello, ' + name);
 };
-auth();
+auth();}
 
 
 export default auth;
