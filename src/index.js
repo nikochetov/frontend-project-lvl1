@@ -1,3 +1,2 @@
-import auth from './auth.js';
-
-export default auth;
+export {name} from './games/auth.js';
+export {evenOrNot} from './games/even_game.js';
