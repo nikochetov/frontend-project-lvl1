@@ -1,3 +1,3 @@
 #!/usr/bin/env node
 
-import auth from '../index.js';
+import * as game from '../index.js';
