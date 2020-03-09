@@ -1,3 +1,3 @@
 #!/usr/bin/env node
 
-import {name, everOrNot} from '../index.js'
+import defaultExport from '../games/even-game.js'
