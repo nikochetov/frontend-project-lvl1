@@ -1,18 +1,30 @@
-// import readlineSync from 'readline-sync';
-// import * as greeting from './greeting.js';
-// import evenOrNot from './games/even_game.js'
-//
-// const game = evenOrNot();
-
-
-// import readlineSync from 'readline-sync';
-// import * as greeting from './greeting.js';
-// import calc from './games/calc-game.js'
-//
-// const game = calc();
-
 import readlineSync from 'readline-sync';
-import * as greeting from './greeting.js';
-import gcd from './games/gcd-game.js'
 
-const game = gcd();
+console.log('Welcome to the Brain Games!');
+export const playerName = readlineSync.question('May I have your name? ');
+console.log('Hello, ' + playerName);
+
+const workFlow = (description, getGameData) => {
+  console.log(description);
+  const attempts = 3;
+  let attemptCount = 0;
+  while (attemptCount < attempts) {
+    const [question, correctAnswer] = getGameData();
+    console.log('Question: ', question);
+    const userResponse = readlineSync.question('Your answer: ');
+    if (correctAnswer == userResponse) {
+      console.log('Correct!');
+      attemptCount += 1;
+    } else {
+      console.log(`"${userResponse}" is wrong answer ;(. Correct answer was "${correctAnswer}"`);
+      break;
+    }
+  };
+  if (attemptCount === 3) {
+    console.log(`Congratulations!, ${playerName}`);
+  } else {
+    console.log(`Let's try again, ${playerName}`);
+  }
+};
+
+export default core;
