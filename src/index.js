@@ -20,7 +20,7 @@ const workFlow = (description, getGameData) => {
       break;
     }
   };
-  if (attemptCount === 3) {
+  if (attemptCount === attempts) {
     console.log(`Congratulations!, ${playerName}`);
   } else {
     console.log(`Let's try again, ${playerName}`);
