@@ -1,4 +1,4 @@
-import workFlow from '../index.js';
+import gameEngine from '../index.js';
 
 const description = 'What is the result of the expression?';
 const randomCalculate = () => {
@@ -9,20 +9,22 @@ const randomCalculate = () => {
   for(let i = 0; i < 1; i += 1) {
     operator += possible.charAt(Math.floor(Math.random() * possible.length));
   };
-  let result = 0;
+  let correctAnswer = 0;
     switch (operator) {
       case '*':
-        result = firstOperand * secondOperand;
+        correctAnswer = firstOperand * secondOperand;
       break;
       case '-':
-        result = firstOperand - secondOperand;
+        correctAnswer = firstOperand - secondOperand;
       break;
       default:
-        result = firstOperand + secondOperand;
+        correctAnswer = firstOperand + secondOperand;
     };
   const question = `${firstOperand} ${operator} ${secondOperand}`;
+  const gameData = [question, correctAnswer];
+  return gameData;
 };
 
-workFlow(description, randomCalculate)
+gameEngine(description, randomCalculate)
 
-export default () => workFlow(description, randomCalculate);
+export default () => gameEngine(description, randomCalculate);
