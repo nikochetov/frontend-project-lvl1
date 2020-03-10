@@ -1,10 +1,11 @@
 import readlineSync from 'readline-sync';
 
-console.log('Welcome to the Brain Games!');
-export const playerName = readlineSync.question('May I have your name? ');
-console.log('Hello, ' + playerName);
+const greeting = 'Welcome to the Brain Games!'
+console.log(greeting);
 
 const gameEngine = (description, getGameData) => {
+  const playerName = readlineSync.question('May I have your name? ');
+  console.log('Hello, ' + playerName);
   console.log(description);
   const attempts = 3;
   let attemptCount = 0;
