@@ -1,4 +1,4 @@
-import workFlow from '../index.js';
+import gameEngine from '../index.js';
 
 const description = 'Answer "yes" if the number is even, otherwhise answer "no".'
 const evenOrNot = () => {
@@ -9,6 +9,6 @@ const evenOrNot = () => {
   return gameData;
 };
 
-workFlow(description, evenOrNot);
+gameEngine(description, evenOrNot);
 
-export default () => workFlow(description, evenOrNot);
+export default () => gameEngine(description, evenOrNot);
