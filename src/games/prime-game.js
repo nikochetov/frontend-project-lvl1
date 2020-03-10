@@ -1,4 +1,4 @@
-import workFlow from '../index.js';
+import gameEngine from '../index.js';
 
 const description = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 const primeOrNot = () => {
@@ -16,10 +16,12 @@ const primeOrNot = () => {
     }
     return true;
   };
-  const result = isPrime(randomNumber) === true ? 'yes' : 'no';
+  const correctAnswer = isPrime(randomNumber) === true ? 'yes' : 'no';
   const question = randomNumber;
+  const gameData = [question, correctAnswer];
+  return gameData;
 };
 
-workFlow(description, primeOrNot);
+gameEngine(description, primeOrNot);
 
-export default () => workFlow(description, primeOrNot);
+export default () => gameEngine(description, primeOrNot);
