@@ -1,4 +1,4 @@
-import workFlow from '../index.js';
+import gameEngine from '../index.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 const gcd = () => {
@@ -13,10 +13,12 @@ const gcd = () => {
     }
     return gcd(m, n - m);
   };
-  const result = gcd(firstNumber, secondNumber);
+  const correctAnswer = gcd(firstNumber, secondNumber);
   const question = `${firstNumber} ${secondNumber}`;
+  const gameData = [question, correctAnswer];
+  return gameData;
 };
 
-workFlow(description, gcd);
+gameEngine(description, gcd);
 
-export default () => workFlow(description, gcd);
+export default () => gameEngine(description, gcd);
