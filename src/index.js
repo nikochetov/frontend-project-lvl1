@@ -4,7 +4,7 @@ console.log('Welcome to the Brain Games!');
 export const playerName = readlineSync.question('May I have your name? ');
 console.log('Hello, ' + playerName);
 
-const workFlow = (description, getGameData) => {
+const gameEngine = (description, getGameData) => {
   console.log(description);
   const attempts = 3;
   let attemptCount = 0;
@@ -27,4 +27,4 @@ const workFlow = (description, getGameData) => {
   }
 };
 
-export default core;
+export default gameEngine;
