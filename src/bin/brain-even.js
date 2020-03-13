@@ -1,3 +1,5 @@
 #!/usr/bin/env node
 
-import defaultExport from '../games/even-game.js'
+import { default as evenGame } from '../games/even-game.js';
+
+evenGame();
