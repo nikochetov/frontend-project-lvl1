@@ -1,3 +1,5 @@
 #!/usr/bin/env node
 
-import defaultExport from '../games/gcd-game.js'
+import { default as gcdGame } from '../games/gcd-game.js'
+
+gcdGame();
