@@ -1,3 +1,5 @@
 #!/usr/bin/env node
 
-import defaultExport from '../games/calc-game.js'
+import { default as calculateGame } from '../games/calc-game.js';
+
+calculateGame();
