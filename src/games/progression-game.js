@@ -1,11 +1,15 @@
 import gameEngine from '../index.js';
+import { generateRandomNumber } from '../commonFunc.js';
 
 const description = 'What number is missing in the progression?';
-const progression = () => {
-  const randomNumber = (Math.floor(Math.random()*100 ) + 1);
-  const unknownNumber = (Math.floor(Math.random()*10 ) + 1);
+const makeProgression = () => {
+  const randomNumberRange = 100,
+        unknownNumberRange = 10,
+        randomNumber = generateRandomNumber(randomNumberRange),
+        unknownNumber = generateRandomNumber(unknownNumberRange);
   let collOfNumbers = [];
-  for (let i = randomNumber; i <= randomNumber + 10; i += 1) {
+  const progressionLength = 10;
+  for (let i = randomNumber; i <= randomNumber + progressionLength; i += 1) {
     collOfNumbers.push(i);
   };
   const correctAnswer = collOfNumbers[unknownNumber];
@@ -16,6 +20,4 @@ const progression = () => {
   return gameData;
 };
 
-gameEngine(description, progression)
-
-export default () => gameEngine(description, progression);
+export default () => gameEngine(description, makeProgression);
