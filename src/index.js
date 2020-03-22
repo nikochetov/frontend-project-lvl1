@@ -8,7 +8,7 @@ const gameEngine = (description, getGameData) => {
   console.log('Hello, ' + playerName);
   console.log(description);
   const attempts = 3;
-  for (let attemptCount = 0; attemptCount < attempts; attemptCount += 1) {
+  for (let attemptCount = 1; attemptCount <= attempts; attemptCount += 1) {
     const [question, correctAnswer] = getGameData();
     console.log('Question: ', question);
     const userResponse = readlineSync.question('Your answer: ');
