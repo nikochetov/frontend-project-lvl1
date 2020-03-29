@@ -6,10 +6,10 @@ const randomCalculate = () => {
   const firstOperand = generateRandomNumber(0, 100);
   const secondOperand = generateRandomNumber(0, 20);
   const possibleOperator = '+-*';
-  const index = Math.floor(Math.random() * possibleOperator.length);
-  const operator = possibleOperator[index];
+  const index = generateRandomNumber(0, 2);
+  const operators = possibleOperator[index];
   let correctAnswer;
-  switch (operator) {
+  switch (operators) {
     case '*':
       correctAnswer = firstOperand * secondOperand;
     break;
@@ -20,7 +20,7 @@ const randomCalculate = () => {
       correctAnswer = firstOperand + secondOperand;
     break;
   };
-  const question = `${firstOperand} ${operator} ${secondOperand}`;
+  const question = `${firstOperand} ${operators} ${secondOperand}`;
   const gameData = [question, correctAnswer];
   return gameData;
 };
