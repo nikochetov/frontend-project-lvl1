@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import { default as progressionGame } from '../games/progression-game.js';
+import progressionGame from '../games/progression-game.js';
 
 progressionGame();
