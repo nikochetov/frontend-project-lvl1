@@ -22,7 +22,6 @@ const gameEngine = (description, getGameData) => {
   }
 
   console.log(`Congratulations!, ${playerName}`);
-  return;
 };
 
 export default gameEngine;
