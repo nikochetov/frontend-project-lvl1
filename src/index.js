@@ -16,11 +16,13 @@ const gameEngine = (description, getGameData) => {
       console.log('Correct!');
     } else {
       console.log(`"${userResponse}" is wrong answer ;(. Correct answer was "${correctAnswer}"`);
-      return console.log(`Let's try again, ${playerName}`);
+      console.log(`Let's try again, ${playerName}`);
+      return;
     }
   }
 
-  return console.log(`Congratulations!, ${playerName}`);
+  console.log(`Congratulations!, ${playerName}`);
+  return;
 };
 
 export default gameEngine;
