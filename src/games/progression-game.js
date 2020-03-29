@@ -3,17 +3,18 @@ import generateRandomNumber from '../randomNumber.js';
 
 const description = 'What number is missing in the progression?';
 const makeProgression = () => {
-  const randomNumber = generateRandomNumber(0, 100);
-  const unknownNumber = generateRandomNumber(0, 10);
-  let collOfNumbers = [];
+  const progressionBegin = generateRandomNumber(1, 90);
+  const unknownNumber = generateRandomNumber(1, 8);
+  const progression = [];
   const progressionLength = 10;
-  for (let i = randomNumber; i < randomNumber + progressionLength; i += 1) {
-    collOfNumbers.push(i);
+  const progressionStep = 1;
+  for (let i = progressionBegin; i < progressionBegin + progressionLength; i += progressionStep) {
+    progression.push(i);
   };
 
-  const correctAnswer = collOfNumbers[unknownNumber];
-  collOfNumbers[unknownNumber] = '..';
-  const nums = collOfNumbers.join(' ');
+  const correctAnswer = progression[unknownNumber];
+  progression[unknownNumber] = '..';
+  const nums = progression.join(' ');
   const question = `${nums}`;
   const gameData = [question, correctAnswer];
   return gameData;
