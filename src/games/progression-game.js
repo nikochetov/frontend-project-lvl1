@@ -1,23 +1,28 @@
 import gameEngine from '../index.js';
 import generateRandomNumber from '../randomNumber.js';
 
-const description = 'What number is missing in the progression?';
-const makeProgression = () => {
-  const progressionBegin = generateRandomNumber(1, 90);
-  const unknownNumber = generateRandomNumber(1, 8);
+const makeProgression = (progressionStep, progressionBegin, progressionLength) => {
   const progression = [];
-  const progressionLength = 10;
-  const progressionStep = 1;
-  for (let i = progressionBegin; i < progressionBegin + progressionLength; i += progressionStep) {
-    progression.push(i);
+  progression.push(progressionBegin);
+  for (let i = 1; i < progressionLength; i += 1) {
+    progression.push(progressionBegin + (progressionStep * i));
   };
 
-  const correctAnswer = progression[unknownNumber];
-  progression[unknownNumber] = '..';
-  const nums = progression.join(' ');
-  const question = `${nums}`;
+  return progression;
+};
+
+const description = 'What number is missing in the progression?';
+const getDataForProgressionGame = () => {
+  const progressionLength = 10;
+  const progressionStep = generateRandomNumber(1, 9);
+  const progressionBegin = generateRandomNumber(1, 100);
+  const unknownNumberIndex = generateRandomNumber(1, progressionLength - 1);
+  const progression = makeProgression(progressionStep, progressionBegin, progressionLength);
+  const correctAnswer = progression[unknownNumberIndex];
+  progression[unknownNumberIndex] = '..';
+  const question = progression.join(' ');
   const gameData = [question, correctAnswer];
   return gameData;
 };
 
-export default () => gameEngine(description, makeProgression);
+export default () => gameEngine(description, getDataForProgressionGame);
