@@ -54,4 +54,4 @@ $ brain-progression
 ```
 Find an unknown number in arithmetic progression.
 
-[![asciicast](https://asciinema.org/a/JzbmlupjSDKqnvyfdcF8QsYbx.svg)](https://asciinema.org/a/JzbmlupjSDKqnvyfdcF8QsYbx)
+[![asciicast](https://asciinema.org/a/309041.svg)](https://asciinema.org/a/309041)
