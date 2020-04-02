@@ -1,28 +1,39 @@
 import gameEngine from '../index.js';
 import generateRandomNumber from '../randomNumber.js';
 
-const description = 'What is the result of the expression?';
-const randomCalculate = () => {
-  const firstOperand = generateRandomNumber(0, 100);
-  const secondOperand = generateRandomNumber(0, 20);
-  const possibleOperator = '+-*';
-  const index = generateRandomNumber(0, 2);
-  const operators = possibleOperator[index];
-  let correctAnswer;
-  switch (operators) {
+const getOperator = () => {
+  const operators = '+-*';
+  const lastOperatorIndex = operators.length - 1;
+  const randomOperatorIndex = generateRandomNumber(0, lastOperatorIndex);
+  const operator = operators[randomOperatorIndex];
+  return operator;
+};
+
+const calculate = (firstOperand, secondOperand, operator) => {
+  let result;
+  switch (operator) {
     case '*':
-      correctAnswer = firstOperand * secondOperand;
+      result = firstOperand * secondOperand;
     break;
     case '-':
-      correctAnswer = firstOperand - secondOperand;
+      result = firstOperand - secondOperand;
     break;
     case '+':
-      correctAnswer = firstOperand + secondOperand;
+      result = firstOperand + secondOperand;
     break;
   };
-  const question = `${firstOperand} ${operators} ${secondOperand}`;
+  return result;
+};
+
+const description = 'What is the result of the expression?';
+const getDataForCalcGame = () => {
+  const firstOperand = generateRandomNumber(1, 100);
+  const secondOperand = generateRandomNumber(1, 20);
+  const operator = getOperator();
+  const correctAnswer = calculate(firstOperand, secondOperand, operator);
+  const question = `${firstOperand} ${operator} ${secondOperand}`;
   const gameData = [question, correctAnswer];
   return gameData;
 };
 
-export default () => gameEngine(description, randomCalculate);
+export default () => gameEngine(description, getDataForCalcGame);
