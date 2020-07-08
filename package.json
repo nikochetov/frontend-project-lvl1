@@ -10,6 +10,7 @@
     "brain-progression": "src/bin/brain-progression.js",
     "brain-prime": "src/bin/brain-prime.js"
   },
+  "type": "module",
   "files": [
     "src"
   ],
