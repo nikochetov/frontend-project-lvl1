@@ -6,7 +6,7 @@ const makeProgression = (progressionStep, progressionBegin, progressionLength) =
   progression.push(progressionBegin);
   for (let i = 1; i < progressionLength; i += 1) {
     progression.push(progressionBegin + (progressionStep * i));
-  };
+  }
 
   return progression;
 };
@@ -18,7 +18,7 @@ const getDataForProgressionGame = () => {
   const progressionBegin = generateRandomNumber(1, 100);
   const unknownNumberIndex = generateRandomNumber(1, progressionLength - 1);
   const progression = makeProgression(progressionStep, progressionBegin, progressionLength);
-  const correctAnswer = progression[unknownNumberIndex];
+  const correctAnswer = progression[unknownNumberIndex].toString();
   progression[unknownNumberIndex] = '..';
   const question = progression.join(' ');
   const gameData = [question, correctAnswer];

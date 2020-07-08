@@ -14,14 +14,16 @@ const calculate = (firstOperand, secondOperand, operator) => {
   switch (operator) {
     case '*':
       result = firstOperand * secondOperand;
-    break;
+      break;
     case '-':
       result = firstOperand - secondOperand;
-    break;
+      break;
     case '+':
       result = firstOperand + secondOperand;
-    break;
-  };
+      break;
+    default:
+      throw new Error(`Unknown operator ${operator}`);
+  }
   return result;
 };
 
@@ -30,7 +32,7 @@ const getDataForCalcGame = () => {
   const firstOperand = generateRandomNumber(1, 100);
   const secondOperand = generateRandomNumber(1, 20);
   const operator = getOperator();
-  const correctAnswer = calculate(firstOperand, secondOperand, operator);
+  const correctAnswer = calculate(firstOperand, secondOperand, operator).toString();
   const question = `${firstOperand} ${operator} ${secondOperand}`;
   const gameData = [question, correctAnswer];
   return gameData;
